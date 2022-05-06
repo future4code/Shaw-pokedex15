@@ -36,9 +36,9 @@ const Details = () => {
   return (
     <div>
       <Header>
-        <Button onClick={() => goToHome(navigate)}>Voltar</Button>
+        {/* <Button onClick={() => goToHome(navigate)}>Voltar</Button> */}
         <div>
-          <img src={logo} alt={"logo do Pokemon, gotta catch'em all"} />
+          <img onClick={() => goToHome(navigate)} src={logo} alt={"logo do Pokemon, gotta catch'em all"} />
         </div>
         <Button onClick={() => goToPokedex(navigate)}>Pokedex</Button>
       </Header>

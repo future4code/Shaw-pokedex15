@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 
 export const Card = styled.div`
+font-family: 'Press Start 2P', cursive;
 color: white;
 border: 5px solid  white;
 min-width: 95%;
@@ -20,28 +21,6 @@ font-size: 1.5rem;
   cursor:pointer;
 }
 
-/* overflow: hidden;
-overflow-y: scroll;  */
-
-/* ::-webkit-scrollbar {
-    width: 5px;
-    height: 20px;
-    border-radius: 400px;
-    padding: 400px;
-    box-decoration-break: clone;
-    position: relative;
-    margin: 5px;
-
-}
-::-webkit-scrollbar-thumb {
-    background-color: #d40000
-    
-}
-::-webkit-scrollbar-track {
-    background:  #d40000
-
-} */
-
 h3 {
     margin-bottom: 20px;
 }
@@ -58,7 +37,7 @@ img{
     transition: 1s;
     font-size: 1.7rem;
     background-color: #d40000;
-box-shadow: rgb(0 0 0 / 100%) 0px 4px 8px 0px;
+    box-shadow: rgb(0 0 0 / 100%) 0px 4px 8px 0px;
 
 
   }
@@ -80,6 +59,7 @@ box-shadow: rgb(0 0 0 / 100%) 0px 4px 8px 0px;
 
 `
 export const ContainerMae = styled.div`
+
 background-color: white;
 border: 4px solid #000000;
 padding: 3px;
@@ -107,7 +87,8 @@ margin: 1%;
     }
 `
 
-export const Button= styled.button`
+export const Button = styled.button`
+  font-family: 'Press Start 2P', cursive;
   color: black;
   font-weight: bold;
   font-size: 1rem;

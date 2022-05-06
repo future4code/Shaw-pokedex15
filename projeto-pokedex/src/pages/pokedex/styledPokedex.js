@@ -30,6 +30,8 @@ export const Header = styled.div`
 
   img{
     width: 200px;
+    &:hover{
+    cursor: pointer;
   }
 
   @media (min-width: 375px) and (max-width: 667px) {
@@ -47,6 +49,7 @@ export const Header = styled.div`
 
 
 export const Button = styled.button`
+  font-family: 'Press Start 2P', cursive;
   color: black;
   font-weight: bold;
   font-size: 1.1rem;
