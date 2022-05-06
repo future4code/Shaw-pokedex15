@@ -1,54 +1,44 @@
 import React, { useState } from "react";
 import { GlobalContext } from "./GlobalContext";
 import axios from "axios";
-import { baseUrl } from "../constants/constants";
 
 export default function GlobalState(props) {
     const [pokedexList, setPokedexList] = useState([])
-    const [pokeList, setPokeList] = useState([])
     const [infosPoke, setInfoPokes] = useState({});
     const [details, setDetails] = useState({})
+    const [page, setPage] = useState(0) //-- ok
+    const [pokeList, setPokeList] = useState([]) //-- ok
 
-    const getPokeInfos = () => {
-        axios
-            .get(`${baseUrl}pokemon/${pokeList.pokemon.name}`)
-            .then((res) => {
-                setInfoPokes(res.data);
-            })
-            .catch((err) => {
-                console.log(err.response);
-            });
-    };
+    //-- FUNCOES ON CLICK PAGINACAO --//
+    const onClickSetPageZero = (() => {
+        setPage(0)
+    })
+    const onClickSetPageTwenty = (() => {
+        setPage(20)
+    })
+    const onClickSetPageFourty = (() => {
+        setPage(40)
+    })
+    const onClickSetPageSixty = (() => {
+        setPage(60)
+    })
 
-    const getPokemons = () => {
-        axios.get(`${baseUrl}pokemon`)
-            .then((res) => {
-                props.setPokeList(res.data.results)
-            })
-            .catch((err) => {
-                console.log(err.response)
-            })
+    const getPokemons = async (pagina) => {
+        try {
+            const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/?offset=${pagina}&limit=20`);
+            setPokeList(response.data.results);
+        } catch (err) {
+            console.log("Erro", err.response);
+        }
     }
 
-    const getPokeDetails = () => {
-        axios.get(`${baseUrl}pokemon/${infosPoke.id}`)
-            .then((res) => {
-                setDetails(res.data)
-            })
-            .catch((err) => {
-                console.log(err.response)
-            })
-    }
-
-    const states = { pokeList, pokedexList, infosPoke, details }
-    const setters = { setPokeList, setPokedexList, setDetails, setInfoPokes }
-    const requests = { getPokeInfos, getPokemons, getPokeDetails }
-
-    const data = { states, setters, requests }
-
+    const states = { pokeList, pokedexList, infosPoke, details, page }
+    const setters = { setPokeList, setPokedexList, setDetails, setInfoPokes, setPage }
+    const functions = { onClickSetPageZero, onClickSetPageTwenty, onClickSetPageFourty, onClickSetPageSixty }
+    const requests = { getPokemons }
     return (
-        <GlobalContext.Provider value={data}>
-
+        <GlobalContext.Provider value={{ states, setters, functions, requests }}>
+            {props.children}
         </GlobalContext.Provider>
     )
 }

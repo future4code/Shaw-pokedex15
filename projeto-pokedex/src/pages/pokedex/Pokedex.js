@@ -1,17 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { goToDetails, goBack } from "../../routers/Cordinator";
+import { GlobalContext } from "../../global/GlobalContext";
+
 
 const Pokedex = (props) => {
     const navigate = useNavigate()
+    const { states, setters } = useContext(GlobalContext)
+
 
     const deletePokemon = (pokemomName) => {
         const newPokedexList = props.pokedexList.filter((item) => {
             return item.name != pokemomName.name
         })
         props.setPokedexList(newPokedexList)
-        const newPokeList = [...props.pokeList, pokemomName]
-        props.setPokeList(newPokeList)
+
+        const newPokeList = [...states.pokeList, pokemomName]
+        setters.setPokeList(newPokeList)
     }
 
     const pokemons = props.pokedexList.map((pokemon) => {
