@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Press Start 2P', cursive;
     box-sizing: border-box;
   }
   @media (min-width: 375px) and (max-width: 667px) {
@@ -18,11 +18,11 @@ const GlobalStyle = createGlobalStyle`
     }
 `
 
-function App () {
-  return(
+function App() {
+  return (
     <GlobalState>
-      <Router/>
-      <GlobalStyle/>
+      <Router />
+      <GlobalStyle />
     </GlobalState>
   )
 }

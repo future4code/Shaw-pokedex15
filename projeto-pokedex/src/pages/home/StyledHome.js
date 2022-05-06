@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100vw;
-  height: 99vh;
+  height: 100vh;
 
   @media (min-width: 375px) and (max-width: 667px) {
     width: 100%;
@@ -11,15 +11,14 @@ export const Container = styled.div`
 `;
 
 export const Header = styled.div`
-  width: 100%;
+  border-bottom: 2px solid orange;
+  box-shadow: 0 0 5px 0; 
+  width: 100vw;
   height: 15%;
   background-color: #d40000;
   display: flex;
   align-items: center;
-  color: #ffffff;
-  letter-spacing: 4px;
-  font-size: 2.3rem;
-  padding: 1%;
+  color: #ffffff; 
   justify-content: space-between;
   h1 {
     padding-left: 34%;
@@ -30,27 +29,30 @@ export const Header = styled.div`
   }
 
   img{
+    opacity: 0.9;
     width: 100%;
     margin-left: 50px;
+        &:hover{
+    opacity: 1;      
+    cursor: pointer;
+  }
   }
 
   @media (min-width: 375px) and (max-width: 667px) {
     height: 10vh;
-    width: 100vw;
-    font-size: 17px;
     display: flex;
     justify-content: center;
-
     div{
-      width: 40vw;
+      width: 35vw;
     }
 
     img{
+      width: 60%;
       margin-left: 0;
     }
 
     Button{
-      width: 40vw;
+      width: 35vw;
       height: 5vh;
     }
   }
@@ -66,9 +68,10 @@ export const Cont = styled.div`
 `;
 
 export const Button = styled.button`
+  font-family: 'Press Start 2P', cursive;
   color: black;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 0.75rem;
   border-radius: 5%;
   transition: all 0.1s ease-in-out;
   background: #fae62d;
@@ -84,21 +87,23 @@ export const Button = styled.button`
     border-color: #7a0303;
     color: #000000;
   }
+
+  @media (min-width: 375px) and (max-width: 667px) {
+    margin-right: 0
+  }
 `;
 
 export const ContainerCard = styled.div`
   background-color: #ffffff;
-  border: 4px solid #d40000;
-  margin-bottom: 0%;
-  margin-top: 5%;
+  border-top: 4px solid #d40000;
+  margin: 5% 2% 2% 0; 
   width: 100%;
   height: 55%;
   display: flex;
   overflow: auto;
   flex: none;
   flex-flow: row nowrap;
-  gap: 1%;
-  padding: 2%;
+  padding-bottom: 3%;
   overflow: hidden;
   overflow-x: scroll;
 
