@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { goToDetails, goBack } from "../../routers/Cordinator";
 import { GlobalContext } from "../../global/GlobalContext";
+import { Button, Cont, Container, ContainerCardTrip, Header } from "./styledPokedex";
+import logo from "../../assets/logoPokemon.png"
 
 
 const Pokedex = (props) => {
@@ -22,26 +24,35 @@ const Pokedex = (props) => {
     const pokemons = props.pokedexList.map((pokemon) => {
 
         return (
-            <div key={pokemon.id}>
-                <div>
-                    <h2>{pokemon.name}</h2>
+            <Cont key={pokemon.id}>
+                <ContainerCardTrip>
+                    <div onClick={() => goToDetails(navigate, pokemon.id)}>
+
                     <img
                         src={pokemon.sprites?.front_default}
                         alt={`${pokemon.name}`}
                     />
-                </div>
-                <div>
-                    <button onClick={() => deletePokemon(pokemon)}>remover a Pokedex</button>
-                    <button onClick={() => goToDetails(navigate, pokemon.id)}>Ver Detalhes</button>
-                </div>
-            </div>
+                    </div>
+                
+                    <h1>{pokemon.name}</h1>
+                  
+                    {/* <Button onClick={() => goToDetails(navigate, pokemon.id)}>Ver Detalhes</Button> */}
+                       
+                    <Button onClick={() => deletePokemon(pokemon)}>remover</Button>
+                
+                </ContainerCardTrip>
+             
+            </Cont>
         )
     })
     return (
-        <div>
-            <button onClick={() => goBack(navigate)}>Voltar</button>
+        <Container>
+            <Header>
+                <img src={logo} alt={"logo do Pokemon, gotta catch'em all"}/>
+                <Button onClick={() => goBack(navigate)}>Voltar</Button>
+            </Header>
             {pokemons}
-        </div>
+        </Container>
     )
 }
 
