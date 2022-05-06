@@ -3,6 +3,7 @@ import { baseUrl } from "../constants/constants";
 import { useEffect, useState, useContext } from "react";
 import { goToDetails } from "../routers/Cordinator";
 import { useNavigate } from "react-router-dom";
+import { Button, CardTrip, ContainerMae } from "./styledCardPokemon";
 import { GlobalContext } from "../global/GlobalContext";
 
 
@@ -37,19 +38,19 @@ const CardPokemon = (props) => {
   }, []);
 
   return (
-    <div>
-      <div>
+    <ContainerMae>
+      <CardTrip>
         <h2>{props.pokemon.name}</h2>
         <img
           src={infosPoke.sprites?.front_default}
           alt={`${props.pokemon.name}`}
         />
-      </div>
+      </CardTrip>
       <div>
-        <button onClick={() => setPokedex()}>Adicionar a Pokedex</button>
-        <button onClick={() => goToDetails(navigate, infosPoke.name)}>Ver Detalhes</button>
+        <Button onClick={() => setPokedex()}>Adicionar a Pokedex</button>
+        <Button onClick={() => goToDetails(navigate, infosPoke.name)}>Ver Detalhes</button>
       </div>
-    </div>
+    </ContainerMae>
   );
 };
 

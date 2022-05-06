@@ -2,6 +2,7 @@ import React, { useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { goToPokedex } from "../../routers/Cordinator";
 import CardPokemon from "../../components/CardPokemon";
+import { Button, Cont, Container, ContainerCardTrip, Header } from "./StyledHome";
 import { GlobalContext } from "../../global/GlobalContext";
 
 const Home = (props) => {
@@ -26,19 +27,23 @@ const Home = (props) => {
     }, [states.page, props.pokedexList])
 
     return (
-        <div>
-            <div>
-                <button onClick={() => goToPokedex(navigate)}>Pokedex</button>
-                <h2>Home Page</h2>
+       <Container>
+          <Cont>
+            <Header>
+              <h1>Aqui img LAu</h1>
+              <Button onClick={() => goToPokedex(navigate)}>Pokedex</Button>
+            </Header>
+            <ContainerCardTrip>
                 {cardPokemons}
-            </div>
+            </ContainerCardTrip>
             <div>
                 <button onClick={() => functions.onClickSetPageZero()}>1</button>
                 <button onClick={() => functions.onClickSetPageTwenty()}>2</button>
                 <button onClick={() => functions.onClickSetPageFourty()}>3</button>
                 <button onClick={() => functions.onClickSetPageSixty()}>4</button>
             </div>
-        </div>
+          </Cont>
+        </Container>
     )
 }
 
