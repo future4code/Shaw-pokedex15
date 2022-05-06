@@ -1,9 +1,10 @@
 import React, { useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { goToPokedex } from "../../routers/Cordinator";
 import CardPokemon from "../../components/CardPokemon";
 import { Button, Cont, Container, ContainerCardTrip, Header } from "./StyledHome";
 import { GlobalContext } from "../../global/GlobalContext";
+import { goToPokedex } from "../../routers/Cordinator";
+import logo from "../../assets/logoPokemon.png"
 
 const Home = (props) => {
     const navigate = useNavigate()
@@ -30,8 +31,8 @@ const Home = (props) => {
        <Container>
           <Cont>
             <Header>
-              <h1>Aqui img LAu</h1>
-              <Button onClick={() => goToPokedex(navigate)}>Pokedex</Button>
+                <img src={logo} alt={"logo do Pokemon, gotta catch'em all"}/>
+                <Button onClick={() => goToPokedex(navigate)}>Ir para Pokedex</Button>
             </Header>
             <ContainerCardTrip>
                 {cardPokemons}
