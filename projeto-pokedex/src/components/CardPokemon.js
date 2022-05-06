@@ -41,14 +41,13 @@ const CardPokemon = (props) => {
     <ContainerMae>
       <CardTrip>
         <h2>{props.pokemon.name}</h2>
-        <img
+        <img onClick={() => goToDetails(navigate, infosPoke.name)}
           src={infosPoke.sprites?.front_default}
           alt={`${props.pokemon.name}`}
         />
       </CardTrip>
       <div>
-        <Button onClick={() => setPokedex()}>Adicionar a Pokedex</button>
-        <Button onClick={() => goToDetails(navigate, infosPoke.name)}>Ver Detalhes</button>
+        <Button onClick={() => setPokedex()}>Adicionar a Pokedex</Button>
       </div>
     </ContainerMae>
   );

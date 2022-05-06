@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 
 export const CardTrip= styled.div`
+color: white;
 border: 5px solid  white;
 min-width: 95%;
 max-width: 95%;
@@ -15,6 +16,9 @@ align-items: center;
 flex-direction: column;
 border-radius: 10px;
 font-size: 1.5rem;
+&:hover{
+  cursor:pointer;
+}
 
 /* overflow: hidden;
 overflow-y: scroll;  */
