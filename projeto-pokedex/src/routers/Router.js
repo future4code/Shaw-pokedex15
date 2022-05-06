@@ -12,9 +12,9 @@ const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path={"/"} element={<Home pokeList={pokeList} setPokeList={setPokeList} pokedexList={pokedexList} setPokedexList={setPokedexList} />} />
-        <Route path="/pokedex" element={<Pokedex pokeList={pokeList} setPokeList={setPokeList} pokedexList={pokedexList} setPokedexList={setPokedexList} />} />
-        <Route path="/pokemon/:name" element={<Details />} />
+        <Route path={"/"} element={<Home pokeList={pokeList} setPokeList={setPokeList} pokedexList={pokedexList} setPokedexList={setPokedexList} tittle={"Home"}/>} />
+        <Route path="/pokedex" element={<Pokedex pokeList={pokeList} setPokeList={setPokeList} pokedexList={pokedexList} setPokedexList={setPokedexList} tittle={"Pokedex"}/>} />
+        <Route path="/pokemon/:name" element={<Details />} tittle={"Detalhes"}/>
       </Routes>
     </BrowserRouter>
   );
