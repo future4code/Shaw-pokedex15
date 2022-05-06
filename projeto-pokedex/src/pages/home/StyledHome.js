@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 99vw;
+  width: 100vw;
   height: 99vh;
 
   @media (min-width: 375px) and (max-width: 667px) {
@@ -25,23 +25,39 @@ export const Header = styled.div`
     padding-left: 34%;
   }
 
+  div{
+    width: 15vw;
+  }
+
   img{
-    width: 200px;
+    width: 100%;
+    margin-left: 50px;
   }
 
   @media (min-width: 375px) and (max-width: 667px) {
     height: 10vh;
+    width: 100vw;
     font-size: 17px;
     display: flex;
     justify-content: center;
-    h1 {
-      padding: 1%;
+
+    div{
+      width: 40vw;
+    }
+
+    img{
+      margin-left: 0;
+    }
+
+    Button{
+      width: 40vw;
+      height: 5vh;
     }
   }
 `;
 
 export const Cont = styled.div`
-  width: 100%;
+  width: 100vw;
   height: 100%;
   display: flex;
   align-items: center;
@@ -70,7 +86,7 @@ export const Button = styled.button`
   }
 `;
 
-export const ContainerCardTrip = styled.div`
+export const ContainerCard = styled.div`
   background-color: #ffffff;
   border: 4px solid #d40000;
   margin-bottom: 0%;

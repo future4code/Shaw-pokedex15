@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 
-export const CardTrip= styled.div`
+export const Card = styled.div`
 color: white;
 border: 5px solid  white;
 min-width: 95%;

@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
+
 export const Container = styled.div`
-    width: 99vw;
-    height: 99vh;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    margin-top: 20px;
 
 @media (min-width: 375px) and (max-width: 667px) {
         width: 100%;
@@ -14,6 +14,68 @@ export const Container = styled.div`
         flex-direction: column;
     }
 `
+
+export const Header = styled.div`
+  width: 100%;
+  height: 15%;
+  background-color: #d40000;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  letter-spacing: 4px;
+  font-size: 2.3rem;
+  padding: 1%;
+  justify-content: space-between;
+
+  div{
+    width: 15vw;
+  }
+
+  img{
+    width: 100%;
+  }
+
+  @media (min-width: 375px) and (max-width: 667px) {
+    height: 10vh;
+    width: 100vw;
+    font-size: 17px;
+    display: flex;
+    justify-content: center;
+    h1 {
+      padding: 1%;
+    }
+
+    div{
+      width: 55vw;
+    }
+
+    Button{
+      width: 30vw;
+      height: 4vh;
+    }
+  }
+`;
+
+export const Button = styled.button`
+  color: black;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border-radius: 5%;
+  transition: all 0.1s ease-in-out;
+  background: #fae62d;
+  border: 3px solid #fcc000;
+  margin-right: 5%;
+  margin-left: 5%;
+  box-shadow: rgb(0 0 0 / 100%) 0px 4px 8px 0px;
+  padding: 1% 1%;
+  cursor: pointer;
+
+  :hover {
+    background: #d40000;
+    border-color: #7a0303;
+    color: #000000;
+  }
+`;
 
 export const Card1 = styled.div`
     background-color: black;
