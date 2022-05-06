@@ -50,12 +50,13 @@ const Details = () => {
                 <p>{details.types && details.types[1] ? details.types[1].type.name : null}</p>
             </div>
             <div>
+
                 <h3>Principais ataques</h3>
-                <p>{details.moves && details.moves[0].move.name} </p>
-                <p>{details.moves && details.moves[1].move.name} </p>
-                <p>{details.moves && details.moves[2].move.name} </p>
-                <p>{details.moves && details.moves[3].move.name} </p>
-                <p>{details.moves && details.moves[4].move.name} </p>
+                <p>{details.moves && details.moves[0] ? details.moves[0].move.name : null} </p>
+                <p>{details.moves && details.moves[1] ? details.moves[1].move.name : null} </p>
+                <p>{details.moves && details.moves[2] ? details.moves[2].move.name : null} </p>
+                <p>{details.moves && details.moves[3] ? details.moves[3].move.name : null} </p>
+                <p>{details.moves && details.moves[4] ? details.moves[4].move.name : null} </p>
             </div>
         </div>
     )
