@@ -3,6 +3,7 @@ import { baseUrl } from "../constants/constants";
 import { useEffect, useState } from "react";
 import { goToDatils } from "../routers/Cordinator";
 import { useNavigate } from "react-router-dom";
+import { Button, CardTrip, ContainerMae } from "./styledCardPokemon";
 
 const CardPokemon = (props) => {
   const [infosPoke, setInfoPokes] = useState({});
@@ -34,19 +35,21 @@ const CardPokemon = (props) => {
   }, []);
 
   return (
-    <div>
-      <div>
+    <ContainerMae>
+      
+      <CardTrip>
         <img
           src={infosPoke.sprites?.front_default}
           alt={`${props.pokemon.name}`}
         />
-      </div>
+      <h3>{props.pokemon.name}</h3>
+      </CardTrip>
       <div>
-        <button onClick={() => setPokedex()}>Adicionar a Pokedex</button>
+        <Button onClick={() => setPokedex()}>Adicionar</Button>
         {/* <button onClick={() => deletePokemon()}>remover a Pokedex</button> */}
-        <button onClick={() => goToDatils(navigate, infosPoke.id)}>Ver Detalhes</button>
+        <Button onClick={() => goToDatils(navigate, infosPoke.id)}>Ver Detalhes</Button>
       </div>
-    </div>
+    </ContainerMae>
   );
 };
 

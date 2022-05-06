@@ -4,50 +4,59 @@ import { goToPokedex } from "../../routers/Cordinator";
 import axios from "axios";
 import { baseUrl } from "../../constants/constants";
 import CardPokemon from "../../components/CardPokemon";
+import { Button, Cont, Container, ContainerCardTrip, Header } from "./StyledHome";
+
 // import GlobalState from "../../global/GlobalState";
 
-
 const Home = (props) => {
-    const navigate = useNavigate()
-    // const {states, setters} = useContext(GlobalState)
-    // const pokeList = states.pokeList
-    // const setPokeList = setters.setPokeLIst
+  const navigate = useNavigate();
+  // const {states, setters} = useContext(GlobalState)
+  // const pokeList = states.pokeList
+  // const setPokeList = setters.setPokeLIst
 
-    const getPokemons = () => {
-        axios.get(`${baseUrl}pokemon`)
-            .then((res) => {
-                props.setPokeLIst(res.data.results)
-            })
-            .catch((err) => {
-                console.log(err.response)
-            })
-    }
+  const getPokemons = () => {
+    axios
+      .get(`${baseUrl}pokemon`)
+      .then((res) => {
+        props.setPokeLIst(res.data.results);
+      })
+      .catch((err) => {
+        console.log(err.response);
+      });
+  };
 
-    const cardPokemons = props.pokeList.map((pokemon) => {
-        return (
-            <CardPokemon key={pokemon.name}
-                pokeList={props.pokeList}
-                setPokeLIst={props.setPokeLIst}
-                pokemon={pokemon}
-                setPokedexList={props.setPokedexList}
-                pokedexList={props.pokedexList} />
-        )
-    })
-
-
-    useEffect(() => {
-        if(!props.pokedexList.length){
-            getPokemons();
-        }
-    }, [props.pokedexList])
-
+  const cardPokemons = props.pokeList.map((pokemon) => {
     return (
-        <div>
-            <h2>Home Page</h2>
+      <CardPokemon
+        key={pokemon.name}
+        pokeList={props.pokeList}
+        setPokeLIst={props.setPokeLIst}
+        pokemon={pokemon}
+        setPokedexList={props.setPokedexList}
+        pokedexList={props.pokedexList}
+      />
+    );
+  });
+
+  useEffect(() => {
+    if (!props.pokedexList.length) {
+      getPokemons();
+    }
+  }, [props.pokedexList]);
+
+  return (
+    <Container>
+      <Cont>
+        <Header>
+          <h1>Aqui img LAu</h1>
+        <Button onClick={() => goToPokedex(navigate)}>Pokedex</Button>
+        </Header>
+        <ContainerCardTrip>
             {cardPokemons}
-            <button onClick={() => goToPokedex(navigate)}>Pokedex</button>
-        </div>
-    )
-}
+        </ContainerCardTrip>
+      </Cont>
+    </Container>
+  );
+};
 
 export default Home;
