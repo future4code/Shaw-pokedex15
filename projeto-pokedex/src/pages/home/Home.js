@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import CardPokemon from "../../components/CardPokemon";
-import { Button, Cont, Container, ContainerCardTrip, Header } from "./StyledHome";
+import { Button, Cont, Container, ContainerCard, Header } from "./StyledHome";
 import { GlobalContext } from "../../global/GlobalContext";
 import { goToPokedex } from "../../routers/Cordinator";
 import logo from "../../assets/logoPokemon.png"
@@ -31,12 +31,14 @@ const Home = (props) => {
        <Container>
           <Cont>
             <Header>
-                <img src={logo} alt={"logo do Pokemon, gotta catch'em all"}/>
+                <div>
+                    <img src={logo} alt={"logo do Pokemon, gotta catch'em all"}/>
+                </div>
                 <Button onClick={() => goToPokedex(navigate)}>Ir para Pokedex</Button>
             </Header>
-            <ContainerCardTrip>
+            <ContainerCard>
                 {cardPokemons}
-            </ContainerCardTrip>
+            </ContainerCard>
             <div>
                 <button onClick={() => functions.onClickSetPageZero()}>1</button>
                 <button onClick={() => functions.onClickSetPageTwenty()}>2</button>

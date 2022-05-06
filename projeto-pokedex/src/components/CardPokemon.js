@@ -3,7 +3,7 @@ import { baseUrl } from "../constants/constants";
 import { useEffect, useState, useContext } from "react";
 import { goToDetails } from "../routers/Cordinator";
 import { useNavigate } from "react-router-dom";
-import { Button, CardTrip, ContainerMae } from "./styledCardPokemon";
+import { Button, Card, ContainerMae } from "./styledCardPokemon";
 import { GlobalContext } from "../global/GlobalContext";
 
 
@@ -39,13 +39,13 @@ const CardPokemon = (props) => {
 
   return (
     <ContainerMae>
-      <CardTrip>
+      <Card>
         <h2>{props.pokemon.name}</h2>
         <img onClick={() => goToDetails(navigate, infosPoke.name)}
           src={infosPoke.sprites?.front_default}
           alt={`${props.pokemon.name}`}
         />
-      </CardTrip>
+      </Card>
       <div>
         <Button onClick={() => setPokedex()}>Adicionar a Pokedex</Button>
       </div>
