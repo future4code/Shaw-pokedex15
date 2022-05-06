@@ -6,18 +6,21 @@ export const Container = styled.div`
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin-top: 20px;
+    height: 85vh;
+
 
 @media (min-width: 375px) and (max-width: 667px) {
         width: 100%;
-        height: 100%;
+        height: auto;
         display: flex;
         flex-direction: column;
+        margin-top: 2rem;
     }
 `
 
 export const Header = styled.div`
-  font-family: 'Press Start 2P', cursive;
+  border-bottom: 2px solid orange;
+  box-shadow: 0 0 5px 0; 
   width: 100%;
   height: 15%;
   background-color: #d40000;
@@ -25,10 +28,11 @@ export const Header = styled.div`
   align-items: center;
   color: #ffffff;
   letter-spacing: 4px;
-  font-size: 2.3rem;
   padding: 1%;
   justify-content: space-between;
-  
+  h1 {
+    padding-left: 34%;
+  }
 
   div{
     width: 15vw;
@@ -36,7 +40,10 @@ export const Header = styled.div`
 
   img{
     width: 100%;
+    margin-left: 50px;
+    opacity: 0.9;
     &:hover{
+    opacity: 1;
     cursor: pointer;
   }
   }
@@ -44,20 +51,21 @@ export const Header = styled.div`
   @media (min-width: 375px) and (max-width: 667px) {
     height: 10vh;
     width: 100vw;
-    font-size: 17px;
     display: flex;
     justify-content: center;
-    h1 {
-      padding: 1%;
-    }
 
     div{
-      width: 55vw;
+      width: 40vw;
+    }
+
+    img{
+      width: 63%;
+      margin-left: 0;
     }
 
     Button{
-      width: 30vw;
-      height: 4vh;
+      width: 40vw;
+      height: 5vh;
     }
   }
 `;
@@ -66,7 +74,7 @@ export const Button = styled.button`
   font-family: 'Press Start 2P', cursive;
   color: black;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1.4vw;
   border-radius: 5%;
   transition: all 0.1s ease-in-out;
   background: #fae62d;
@@ -82,9 +90,15 @@ export const Button = styled.button`
     border-color: #7a0303;
     color: #000000;
   }
+
+  @media (min-width: 375px) and (max-width: 667px) {
+    margin-right: 0;
+    font-size: 2vw;
+  }
 `;
 
 export const Card1 = styled.div`
+    font-size: 2vw;
     background-color: black;
     color: white;
     border: red 4px solid;
@@ -92,7 +106,7 @@ export const Card1 = styled.div`
     display: flex;
     flex-direction: column;
     width: 25vw;
-    height: 60vh;
+    height: auto;
     justify-content: center;
     align-items: center;
     box-shadow: rgba(255, 0, 0, 0.4) -5px 5px, rgba(255, 0, 0, 0.3) -10px 10px, rgba(255, 0, 0, 0.2) -15px 15px, rgba(255, 0, 0, 0.1) -20px 20px, rgba(255, 0, 0, 0.05) -25px 25px;
@@ -105,19 +119,25 @@ export const Card1 = styled.div`
 
     }
     img{
-        margin: 10px;
-        width: 100%;
-        height: 100%;
+        margin: 0.6rem 0;
+        width: 12vw;
+        height: 15vh;
     }
 
     @media (min-width: 375px) and (max-width: 667px) {
         width: 70%;
-        height: 45vh;
+        height: auto;
         margin: 15px;
+
+        img {
+          height: auto; 
+          width: 100%
+        }
     }
 `
 
 export const Card2 = styled.div`
+    font-size: 1.5vw;
     background-color: black;
     color: white;
     border: red 4px solid;
@@ -127,22 +147,21 @@ export const Card2 = styled.div`
     justify-content: center;
     align-items: center;
     width: 25vw;
-    height: 60vh;
+    height: auto;
     box-shadow: rgba(255, 0, 0, 0.4) 0px 5px, rgba(255, 0, 0, 0.3) 0px 10px, rgba(255, 0, 0, 0.2) 0px 15px, rgba(255, 0, 0, 0.1) 0px 20px, rgba(255, 0, 0, 0.05) 0px 25px;
-
-    p{
-        padding: 10px;
-    }
-
+    padding: 1rem; 
+    
     @media (min-width: 375px) and (max-width: 667px) {
         width: 70%;
-        height: 80%;
+        height: auto;
         margin: 15px;
+        font-size: 3vw;
     }
 `
 
 
 export const Card3 = styled.div`
+    font-size: 1.5vw;
     background-color: black;
     color: white;
     border: red 4px solid;
@@ -152,16 +171,14 @@ export const Card3 = styled.div`
     justify-content: center;
     align-items: center;
     width: 25vw;
-    height: 60vh;
+    height: auto;
     box-shadow: rgba(255, 0, 0, 0.4) 5px 5px, rgba(255, 0, 0, 0.3) 10px 10px, rgba(255, 0, 0, 0.2) 15px 15px, rgba(255, 0, 0, 0.1) 20px 20px, rgba(255, 0, 0, 0.05) 25px 25px;
-
-    p{
-        padding: 4px;
-    }
+    padding: 1rem; 
 
     @media (min-width: 375px) and (max-width: 667px) {
         width: 70%;
-        height: 80%;
+        height: auto;
         margin: 15px;
+        font-size: 3vw;
     }
 `

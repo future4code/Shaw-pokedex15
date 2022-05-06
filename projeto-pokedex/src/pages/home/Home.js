@@ -40,10 +40,10 @@ const Home = (props) => {
                     {cardPokemons}
                 </ContainerCard>
                 <div>
-                    <button onClick={() => functions.onClickSetPageZero()}>1</button>
-                    <button onClick={() => functions.onClickSetPageTwenty()}>2</button>
-                    <button onClick={() => functions.onClickSetPageFourty()}>3</button>
-                    <button onClick={() => functions.onClickSetPageSixty()}>4</button>
+                    <Button onClick={() => functions.onClickSetPageZero()}>1</Button>
+                    <Button onClick={() => functions.onClickSetPageTwenty()}>2</Button>
+                    <Button onClick={() => functions.onClickSetPageFourty()}>3</Button>
+                    <Button onClick={() => functions.onClickSetPageSixty()}>4</Button>
                 </div>
             </Cont>
         </Container>

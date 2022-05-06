@@ -36,7 +36,6 @@ const Details = () => {
   return (
     <div>
       <Header>
-        {/* <Button onClick={() => goToHome(navigate)}>Voltar</Button> */}
         <div>
           <img onClick={() => goToHome(navigate)} src={logo} alt={"logo do Pokemon, gotta catch'em all"} />
         </div>

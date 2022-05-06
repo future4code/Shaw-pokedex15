@@ -8,7 +8,7 @@ border: 5px solid  white;
 min-width: 95%;
 max-width: 95%;
 height: 80%;
-word-wrap: word-wrap;
+word-break: break-all;
 padding: 1%;
 margin: 0%;
 background-color:  #000000;
@@ -16,7 +16,7 @@ display: flex;
 align-items: center;
 flex-direction: column;
 border-radius: 10px;
-font-size: 1.5rem;
+font-size: 0.75rem;
 &:hover{
   cursor:pointer;
 }
@@ -29,13 +29,11 @@ img{
   width: 100%;
   height: 200px;
   border-radius: 10px;
-
-  
 }
 :hover{
 
     transition: 1s;
-    font-size: 1.7rem;
+    font-size: 1.0rem;
     background-color: #d40000;
     box-shadow: rgb(0 0 0 / 100%) 0px 4px 8px 0px;
 
@@ -51,12 +49,14 @@ img{
 
         transition: 1s;
         font-size: 1.2rem;
-
         }
 
+        img{
+        width: 65%;
+        height: auto;
+        }
 
     }
-
 `
 export const ContainerMae = styled.div`
 
@@ -70,7 +70,7 @@ height: 95%;
 word-wrap: word-wrap;
 overflow: hidden;
 box-shadow: rgb(0 0 0 / 100%) 0px 4px 8px 0px;
-margin: 1%;
+margin: 1% 1% 1% 2%;
 
 :hover{
     border-color:   #7a0303;
@@ -80,10 +80,6 @@ margin: 1%;
   @media (min-width: 375px) and (max-width: 667px) {
     min-width: 93%;
     max-width: 20%;
-
-   
-
-
     }
 `
 
@@ -91,7 +87,7 @@ export const Button = styled.button`
   font-family: 'Press Start 2P', cursive;
   color: black;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 0.7rem;
   border-radius: 5%;
   transition: all .1s ease-in-out;
   background: #fae62d ;
@@ -109,4 +105,9 @@ export const Button = styled.button`
     border-color:#7a0303;
     color: #000000;
   }
+
+  @media (min-width: 375px) and (max-width: 667px) {
+    font-size: 0.9rem;
+    margin: 5% 25%;
+    }
 `

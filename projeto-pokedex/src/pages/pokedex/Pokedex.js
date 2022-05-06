@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { goToDetails, goBack, goToHome } from "../../routers/Cordinator";
 import { GlobalContext } from "../../global/GlobalContext";
-import { Button, Cont, Container, ContainerCardTrip, Header } from "./styledPokedex";
+import { Button, Cont, Container, ContainerCardPoke, Header } from "./styledPokedex";
 import logo from "../../assets/logoPokemon.png"
 
 
@@ -25,23 +25,16 @@ const Pokedex = (props) => {
 
         return (
             <Cont key={pokemon.id}>
-                <ContainerCardTrip>
+                <ContainerCardPoke>
                     <div onClick={() => goToDetails(navigate, pokemon.id)}>
-
                         <img
                             src={pokemon.sprites?.front_default}
                             alt={`${pokemon.name}`}
                         />
                     </div>
-
                     <h1>{pokemon.name}</h1>
-
-                    {/* <Button onClick={() => goToDetails(navigate, pokemon.id)}>Ver Detalhes</Button> */}
-
                     <Button onClick={() => deletePokemon(pokemon)}>remover</Button>
-
-                </ContainerCardTrip>
-
+                </ContainerCardPoke>
             </Cont>
         )
     })
