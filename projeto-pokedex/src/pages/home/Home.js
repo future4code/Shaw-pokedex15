@@ -1,24 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { goToPokedex } from "../../routers/Cordinator";
-import axios from "axios";
-import { baseUrl } from "../../constants/constants";
 import CardPokemon from "../../components/CardPokemon";
+import { GlobalContext } from "../../global/GlobalContext";
 
 const Home = (props) => {
     const navigate = useNavigate()
+    const { states, functions, requests } = useContext(GlobalContext)
 
-    const getPokemons = () => {
-        axios.get(`${baseUrl}pokemon`)
-            .then((res) => {
-                props.setPokeList(res.data.results)
-            })
-            .catch((err) => {
-                console.log(err.response)
-            })
-    }
-
-    const cardPokemons = props.pokeList.map((pokemon) => {
+    const cardPokemons = states.pokeList.map((pokemon) => {
         return (
             <CardPokemon key={pokemon.name}
                 pokeList={props.pokeList}
@@ -31,15 +21,23 @@ const Home = (props) => {
 
     useEffect(() => {
         if (!props.pokedexList.length) {
-            getPokemons();
+            requests.getPokemons(states.page);
         }
-    }, [props.pokedexList])
+    }, [states.page, props.pokedexList])
 
     return (
         <div>
-            <button onClick={() => goToPokedex(navigate)}>Pokedex</button>
-            <h2>Home Page</h2>
-            {cardPokemons}
+            <div>
+                <button onClick={() => goToPokedex(navigate)}>Pokedex</button>
+                <h2>Home Page</h2>
+                {cardPokemons}
+            </div>
+            <div>
+                <button onClick={() => functions.onClickSetPageZero()}>1</button>
+                <button onClick={() => functions.onClickSetPageTwenty()}>2</button>
+                <button onClick={() => functions.onClickSetPageFourty()}>3</button>
+                <button onClick={() => functions.onClickSetPageSixty()}>4</button>
+            </div>
         </div>
     )
 }
