@@ -1,13 +1,16 @@
 import axios from "axios";
 import { baseUrl } from "../constants/constants";
-import { useEffect, useState } from "react";
-import { goToDatils } from "../routers/Cordinator";
+import { useEffect, useState, useContext } from "react";
+import { goToDetails } from "../routers/Cordinator";
 import { useNavigate } from "react-router-dom";
 import { Button, CardTrip, ContainerMae } from "./styledCardPokemon";
+import { GlobalContext } from "../global/GlobalContext";
+
 
 const CardPokemon = (props) => {
   const [infosPoke, setInfoPokes] = useState({});
   const navigate = useNavigate()
+  const { states, setters } = useContext(GlobalContext)
 
   const getPokeInfos = () => {
     axios
@@ -24,10 +27,10 @@ const CardPokemon = (props) => {
     const newPokedex = [...props.pokedexList, infosPoke]
     props.setPokedexList(newPokedex);
 
-    const newPokeList = props.pokeList.filter((item) => {
+    const newPokeList = states.pokeList.filter((item) => {
       return item.name != infosPoke.name
     })
-    props.setPokeLIst(newPokeList)
+    setters.setPokeList(newPokeList)
   }
 
   useEffect(() => {
@@ -36,18 +39,16 @@ const CardPokemon = (props) => {
 
   return (
     <ContainerMae>
-      
       <CardTrip>
+        <h2>{props.pokemon.name}</h2>
         <img
           src={infosPoke.sprites?.front_default}
           alt={`${props.pokemon.name}`}
         />
-      <h3>{props.pokemon.name}</h3>
       </CardTrip>
       <div>
-        <Button onClick={() => setPokedex()}>Adicionar</Button>
-        {/* <button onClick={() => deletePokemon()}>remover a Pokedex</button> */}
-        <Button onClick={() => goToDatils(navigate, infosPoke.id)}>Ver Detalhes</Button>
+        <Button onClick={() => setPokedex()}>Adicionar a Pokedex</button>
+        <Button onClick={() => goToDetails(navigate, infosPoke.name)}>Ver Detalhes</button>
       </div>
     </ContainerMae>
   );
