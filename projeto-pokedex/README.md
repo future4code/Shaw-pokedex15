@@ -36,6 +36,6 @@ Projeto da semana 11 do curso da Labenu_, com intuito de aplicar Estado Global u
 - *React*
 
 ## 👨🏻‍💻 Desenvolvedores
-- <sub>Laura Neves Amancio</sub>](https://github.com/lauraamancio)  <br>
-- <sub>Sérgio Pereira Dias</sub>](https://github.com/Sergiopdias)  <br>
-- <sub>María Belén Caldez</sub>](https://github.com/mariabelencaldez)  <br>
+- *Laura Neves Amancio* (https://github.com/lauraamancio)  <br>
+- *Sérgio Pereira Dias* (https://github.com/Sergiopdias)  <br>
+- *María Belén Caldez* (https://github.com/mariabelencaldez)  <br>
