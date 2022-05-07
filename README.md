@@ -1,16 +1,41 @@
-# POKEDEX
+<div align="center">
+<img src="https://www.seekpng.com/png/detail/1-15684_logo-pokemon-pokemon-gotta-catch-em-all-logo.png" alt="Logo Pokemon, gotta catch'em all" width="500px" height="200px"/>
+</div> <br/>
 
-Nome dos integrantes: 
-- Pessoa 1
-- Pessoa 2
-- Pessoa 3
+# 🖥️ PokeDex
 
-Link do Surge: www.link.com.br
+Gotta catch em all! 
 
-O que funciona:
-- Item 1
-- Item 2
+<br/>
 
-O que não funciona: 
-- Item 3
-- Item 4
+## :page_facing_up: Sobre o Projeto
+Projeto da semana 11 do curso da Labenu_, com intuito de aplicar Estado Global usando a API pública PokeApi. 
+<br/>
+
+## :link: Link Surge 
+- https://halting-shade.surge.sh/
+
+## ⚙️ Funcionalidades
+✅ Botões de navegação pelo site no Header; <br/>
+✅ Cards com imagem do Pokémon; <br/>
+✅ Scroll lateral por página; <br/>
+✅ Paginação com 20 cards por página; <br/>
+✅ Opção de adicionar Pokémons na sua Pokedex; <br/>
+✅ Ao adicionar Pokémon, este adicionado some da Home, não podendo ser adicionado 2x; <br/>
+✅ Ver detalhes de cada Pokémon; <br/>
+✅ Remover Pokémons da sua Pokedex.
+
+## 🎨 Layout
+- *Mobile*
+- *Desktop*
+
+## 🛠 Tecnologias
+- *HTML*
+- *CSS*
+- *JavaScript*
+- *React*
+
+## 👨🏻‍💻 Desenvolvedores
+- *Laura Neves Amancio* (https://github.com/lauraamancio)  <br>
+- *Sérgio Pereira Dias* (https://github.com/Sergiopdias)  <br>
+- *María Belén Caldez* (https://github.com/mariabelencaldez)  <br>
