@@ -38,5 +38,8 @@ Projeto da semana 11 do curso da Labenu_, com intuito de aplicar Estado Global u
 ## 👨🏻‍💻 Desenvolvedores
 
 [<img src="https://avatars.githubusercontent.com/u/98964160?v=4" width=115> <br>
- <sub>Laura Neves Amancio</sub>](https://github.com/lauraamancio) |
-| [<img src="https://avatars.githubusercontent.com/u/98185968?v=4" width=115> <br> <sub>María Belén Caldez</sub>](https://github.com/mariabelencaldez) | [<img src="https://avatars.githubusercontent.com/u/99135090?v=4" width=115> <br> <sub>Sérgio Pereira Dias</sub>](https://github.com/Sergiopdias)
+<sub>Laura Neves Amancio</sub>](https://github.com/lauraamancio) |
+[<img src="https://avatars.githubusercontent.com/u/98185968?v=4" width=115> <br> 
+<sub>María Belén Caldez</sub>](https://github.com/mariabelencaldez) | 
+[<img src="https://avatars.githubusercontent.com/u/99135090?v=4" width=115> <br> 
+<sub>Sérgio Pereira Dias</sub>](https://github.com/Sergiopdias)
