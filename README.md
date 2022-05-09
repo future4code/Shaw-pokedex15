@@ -13,7 +13,7 @@ Projeto da semana 11 do curso da Labenu_, com intuito de aplicar Estado Global u
 <br/>
 
 ## :link: Link Surge 
-- https://halting-shade.surge.sh/
+- https://pokedex-laumarser.surge.sh/
 
 ## ⚙️ Funcionalidades
 ✅ Botões de navegação pelo site no Header; <br/>
