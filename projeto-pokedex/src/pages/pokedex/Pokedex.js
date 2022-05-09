@@ -6,22 +6,19 @@ import { Button, Cont, Container, ContainerCardPoke, Header } from "./styledPoke
 import logo from "../../assets/logoPokemon.png"
 
 
-const Pokedex = (props) => {
+const Pokedex = () => {
     const navigate = useNavigate()
     const { states, setters } = useContext(GlobalContext)
 
 
     const deletePokemon = (pokemomName) => {
-        const newPokedexList = props.pokedexList.filter((item) => {
+        const newPokedexList = states.pokedexList.filter((item) => {
             return item.name !== pokemomName.name
         })
-        props.setPokedexList(newPokedexList)
-
-        const newPokeList = [...states.pokeList, pokemomName]
-        setters.setPokeList(newPokeList)
+        setters.setPokedexList(newPokedexList)
     }
 
-    const pokemons = props.pokedexList.map((pokemon) => {
+    const pokemons = states.pokedexList.map((pokemon) => {
 
         return (
             <Cont key={pokemon.id}>

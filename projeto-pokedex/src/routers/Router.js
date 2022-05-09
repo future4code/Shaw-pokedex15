@@ -6,15 +6,12 @@ import React, { useState } from "react";
 
 const Router = () => {
 
-  const [pokedexList, setPokedexList] = useState([])
-  const [pokeList, setPokeList] = useState([])
-
   return (
     <BrowserRouter>
       <Routes>
-        <Route path={"/"} element={<Home pokeList={pokeList} setPokeList={setPokeList} pokedexList={pokedexList} setPokedexList={setPokedexList} tittle={"Home"}/>} />
-        <Route path="/pokedex" element={<Pokedex pokeList={pokeList} setPokeList={setPokeList} pokedexList={pokedexList} setPokedexList={setPokedexList} tittle={"Pokedex"}/>} />
-        <Route path="/pokemon/:name" element={<Details />} tittle={"Detalhes"}/>
+        <Route path={"/"} element={<Home />} />
+        <Route path="/pokedex" element={<Pokedex />} />
+        <Route path="/pokemon/:name" element={<Details />} />
       </Routes>
     </BrowserRouter>
   );

@@ -12,6 +12,7 @@ const CardPokemon = (props) => {
   const navigate = useNavigate()
   const { states, setters } = useContext(GlobalContext)
 
+
   const getPokeInfos = () => {
     axios
       .get(`${baseUrl}pokemon/${props.pokemon.name}`)
@@ -24,8 +25,8 @@ const CardPokemon = (props) => {
   };
 
   const setPokedex = () => {
-    const newPokedex = [...props.pokedexList, infosPoke]
-    props.setPokedexList(newPokedex);
+    const newPokedex = [...states.pokedexList, infosPoke]
+    setters.setPokedexList(newPokedex);
 
     const newPokeList = states.pokeList.filter((item) => {
       return item.name != infosPoke.name
