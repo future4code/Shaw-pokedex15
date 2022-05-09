@@ -26,11 +26,18 @@ export default function GlobalState(props) {
     const getPokemons = async (pagina) => {
         try {
             const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/?offset=${pagina}&limit=20`);
-            setPokeList(response.data.results);
+            const newPokeList = response.data.results.filter((item) => {
+                return !pokedexList.find((pokemon) => {
+                    return pokemon.name === item.name
+                })
+            })
+            setPokeList(newPokeList)
         } catch (err) {
             console.log("Erro", err.response);
         }
     }
+
+
 
     const states = { pokeList, pokedexList, infosPoke, details, page }
     const setters = { setPokeList, setPokedexList, setDetails, setInfoPokes, setPage }

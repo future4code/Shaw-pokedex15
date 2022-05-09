@@ -22,10 +22,8 @@ const Home = (props) => {
     })
 
     useEffect(() => {
-        if (!props.pokedexList.length) {
-            requests.getPokemons(states.page);
-        }
-    }, [states.page, props.pokedexList])
+        requests.getPokemons(states.page)
+    }, [states.page])
 
     return (
         <Container>
